@@ -17,6 +17,8 @@ export class ServersComponent implements OnInit {
   username = '';
   serverCreated = false;
   servers = ['TestServer', 'MyTestServer'];
+  logs = [];
+  displayPassword = true;
 
   constructor() {
     setTimeout(() => {
@@ -39,5 +41,10 @@ export class ServersComponent implements OnInit {
 
   resetUsername() {
     this.username = '';
+  }
+
+  displayDetailsClick() {
+    this.logs.push({time: new Date().getTime(), number: this.logs.length + 1});
+    this.displayPassword = !this.displayPassword;
   }
 }

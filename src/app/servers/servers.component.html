@@ -17,6 +17,19 @@
 
 <app-server *ngFor="let server of servers"></app-server>
 
+
+<h4>Assignment 2</h4>
 <input type="text" class="form-control" [(ngModel)]="username">
 <p>Username: {{username}}</p>
 <button class="btn btn-primary" [disabled]="!username" (click)="resetUsername()">Reset Username</button>
+
+
+<h4>Assignment 3</h4>
+<button class="btn btn-primary" (click)="displayDetailsClick()">Display Details</button>
+<p *ngIf="displayPassword">Secret Password = 'tuna'</p>
+<ul>
+  <li *ngFor="let log of logs"
+      [ngStyle]="{backgroundColor: log.number > 4 ? 'blue': ''}"
+      [ngClass]="{longLog: log.number > 4}"
+  >{{log.number}} - {{log.time}}</li>
+</ul>
