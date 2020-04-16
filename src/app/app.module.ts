@@ -21,3 +21,6 @@ import { ServerElementComponent } from './server-element/server-element.componen
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+// @ViewChild('serverContentInput', {static: true}) serverContentInput: ElementRef;
