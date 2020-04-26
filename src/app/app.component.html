@@ -17,4 +17,12 @@
     </div>
   </div>
 
+  <div class="row" [ngSwitch]="counter">
+    <p *ngSwitchCase="5">Option: 5</p>
+    <p *ngSwitchCase="10">Option: 10</p>
+    <p *ngSwitchCase="100">Option: 100</p>
+    <p *ngSwitchCase="1000">Option: 1000</p>
+    <p *ngSwitchDefault>Option: Default</p>
+  </div>
+
 </div>

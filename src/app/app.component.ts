@@ -9,6 +9,7 @@ export class AppComponent {
   name = 'udemy-angular';
   loadedFeature = 'recipe';
   onlyOdd: boolean;
+  counter: number = 10;
 
   onNavigate(feature: string) {
     this.loadedFeature = feature;
