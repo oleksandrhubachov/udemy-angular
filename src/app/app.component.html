@@ -9,4 +9,12 @@
   </div>
   <p appBasicHighlight>Style me with a basic directive!</p>
   <p [appBetterHighlight]="'red'" defaultColor="yellow">Style me with a better directive!</p>
+
+  <div [ngStyle]="{backgroundColor: onlyOdd ? 'red' : 'blue'}" class="row">
+    <div class="col-xs-12">
+    <p *appUnless="onlyOdd">Example of using structural directive</p>
+      <button class="btn btn-success" type="submit" (click)="toggleOnlyOdd()">Add</button>
+    </div>
+  </div>
+
 </div>
