@@ -7,22 +7,22 @@
       <app-shopping-list *ngIf="loadedFeature !== 'recipe'"></app-shopping-list>
     </div>
   </div>
-  <p appBasicHighlight>Style me with a basic directive!</p>
-  <p [appBetterHighlight]="'red'" defaultColor="yellow">Style me with a better directive!</p>
+<!--  <p appBasicHighlight>Style me with a basic directive!</p>-->
+<!--  <p [appBetterHighlight]="'red'" defaultColor="yellow">Style me with a better directive!</p>-->
 
-  <div [ngStyle]="{backgroundColor: onlyOdd ? 'red' : 'blue'}" class="row">
-    <div class="col-xs-12">
-    <p *appUnless="onlyOdd">Example of using structural directive</p>
-      <button class="btn btn-success" type="submit" (click)="toggleOnlyOdd()">Add</button>
-    </div>
-  </div>
+<!--  <div [ngStyle]="{backgroundColor: onlyOdd ? 'red' : 'blue'}" class="row">-->
+<!--    <div class="col-xs-12">-->
+<!--    <p *appUnless="onlyOdd">Example of using structural directive</p>-->
+<!--      <button class="btn btn-success" type="submit" (click)="toggleOnlyOdd()">Add</button>-->
+<!--    </div>-->
+<!--  </div>-->
 
-  <div class="row" [ngSwitch]="counter">
-    <p *ngSwitchCase="5">Option: 5</p>
-    <p *ngSwitchCase="10">Option: 10</p>
-    <p *ngSwitchCase="100">Option: 100</p>
-    <p *ngSwitchCase="1000">Option: 1000</p>
-    <p *ngSwitchDefault>Option: Default</p>
-  </div>
+<!--  <div class="row" [ngSwitch]="counter">-->
+<!--    <p *ngSwitchCase="5">Option: 5</p>-->
+<!--    <p *ngSwitchCase="10">Option: 10</p>-->
+<!--    <p *ngSwitchCase="100">Option: 100</p>-->
+<!--    <p *ngSwitchCase="1000">Option: 1000</p>-->
+<!--    <p *ngSwitchDefault>Option: Default</p>-->
+<!--  </div>-->
 
 </div>
