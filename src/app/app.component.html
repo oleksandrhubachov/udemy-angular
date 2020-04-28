@@ -1,28 +1,42 @@
-<app-header (featureSelected)="onNavigate($event)"></app-header>
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <h2>I'm working</h2>
-      <app-recipes *ngIf="loadedFeature === 'recipe'"></app-recipes>
-      <app-shopping-list *ngIf="loadedFeature !== 'recipe'"></app-shopping-list>
-    </div>
-  </div>
-<!--  <p appBasicHighlight>Style me with a basic directive!</p>-->
-<!--  <p [appBetterHighlight]="'red'" defaultColor="yellow">Style me with a better directive!</p>-->
-
-<!--  <div [ngStyle]="{backgroundColor: onlyOdd ? 'red' : 'blue'}" class="row">-->
-<!--    <div class="col-xs-12">-->
-<!--    <p *appUnless="onlyOdd">Example of using structural directive</p>-->
-<!--      <button class="btn btn-success" type="submit" (click)="toggleOnlyOdd()">Add</button>-->
+<!--<app-header (featureSelected)="onNavigate($event)"></app-header>-->
+<!--<div class="container">-->
+<!--  <div class="row">-->
+<!--    <div class="col-md-12">-->
+<!--      <h2>I'm working</h2>-->
+<!--      <app-recipes *ngIf="loadedFeature === 'recipe'"></app-recipes>-->
+<!--      <app-shopping-list *ngIf="loadedFeature !== 'recipe'"></app-shopping-list>-->
 <!--    </div>-->
 <!--  </div>-->
+<!--&lt;!&ndash;  <p appBasicHighlight>Style me with a basic directive!</p>&ndash;&gt;-->
+<!--&lt;!&ndash;  <p [appBetterHighlight]="'red'" defaultColor="yellow">Style me with a better directive!</p>&ndash;&gt;-->
 
-<!--  <div class="row" [ngSwitch]="counter">-->
-<!--    <p *ngSwitchCase="5">Option: 5</p>-->
-<!--    <p *ngSwitchCase="10">Option: 10</p>-->
-<!--    <p *ngSwitchCase="100">Option: 100</p>-->
-<!--    <p *ngSwitchCase="1000">Option: 1000</p>-->
-<!--    <p *ngSwitchDefault>Option: Default</p>-->
-<!--  </div>-->
+<!--&lt;!&ndash;  <div [ngStyle]="{backgroundColor: onlyOdd ? 'red' : 'blue'}" class="row">&ndash;&gt;-->
+<!--&lt;!&ndash;    <div class="col-xs-12">&ndash;&gt;-->
+<!--&lt;!&ndash;    <p *appUnless="onlyOdd">Example of using structural directive</p>&ndash;&gt;-->
+<!--&lt;!&ndash;      <button class="btn btn-success" type="submit" (click)="toggleOnlyOdd()">Add</button>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;  </div>&ndash;&gt;-->
 
+<!--&lt;!&ndash;  <div class="row" [ngSwitch]="counter">&ndash;&gt;-->
+<!--&lt;!&ndash;    <p *ngSwitchCase="5">Option: 5</p>&ndash;&gt;-->
+<!--&lt;!&ndash;    <p *ngSwitchCase="10">Option: 10</p>&ndash;&gt;-->
+<!--&lt;!&ndash;    <p *ngSwitchCase="100">Option: 100</p>&ndash;&gt;-->
+<!--&lt;!&ndash;    <p *ngSwitchCase="1000">Option: 1000</p>&ndash;&gt;-->
+<!--&lt;!&ndash;    <p *ngSwitchDefault>Option: Default</p>&ndash;&gt;-->
+<!--&lt;!&ndash;  </div>&ndash;&gt;-->
+
+<!--</div>-->
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <app-new-account (accountAdded)="onAccountAdded($event)"></app-new-account>
+      <hr>
+      <app-account
+        *ngFor="let acc of accounts; let i = index"
+        [account]="acc"
+        [id]="i"
+        (statusChanged)="onStatusChanged($event)"></app-account>
+    </div>
+  </div>
 </div>

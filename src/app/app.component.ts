@@ -6,17 +6,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  name = 'udemy-angular';
-  loadedFeature = 'recipe';
-  onlyOdd: boolean;
-  counter: number = 10;
+  accounts = [
+    {
+      name: 'Master Account',
+      status: 'active'
+    },
+    {
+      name: 'Testaccount',
+      status: 'inactive'
+    },
+    {
+      name: 'Hidden Account',
+      status: 'unknown'
+    }
+  ];
 
-  onNavigate(feature: string) {
-    this.loadedFeature = feature;
+  onAccountAdded(newAccount: {name: string, status: string}) {
+    this.accounts.push(newAccount);
   }
 
-  toggleOnlyOdd() {
-    this.onlyOdd = !this.onlyOdd;
+  onStatusChanged(updateInfo: {id: number, newStatus: string}) {
+    this.accounts[updateInfo.id].status = updateInfo.newStatus;
   }
-
 }
