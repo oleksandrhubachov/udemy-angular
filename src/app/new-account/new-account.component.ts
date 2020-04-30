@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {LoggingService} from '../logging.service';
 import {AccountsService} from '../accounts.service';
 
@@ -10,7 +10,8 @@ import {AccountsService} from '../accounts.service';
 })
 export class NewAccountComponent {
 
-  constructor(private loggingService: LoggingService, private accountsService: AccountsService) {}
+  constructor(private loggingService: LoggingService, private accountsService: AccountsService) {
+  }
 
   onCreateAccount(accountName: string, accountStatus: string) {
     this.accountsService.addAccount(accountName, accountStatus);
