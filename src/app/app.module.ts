@@ -17,6 +17,9 @@ import {AccountComponent} from './account/account.component';
 import {NewAccountComponent} from './new-account/new-account.component';
 import {AccountsService} from './accounts.service';
 import {LoggingService} from './logging.service';
+import {ActiveUsersComponent} from './active-users/active-users.component';
+import {InactiveUsersComponent} from './inactive-users/inactive-users.component';
+import {UserService} from './user.service';
 
 @NgModule({
   declarations: [
@@ -33,13 +36,15 @@ import {LoggingService} from './logging.service';
     BasicHighlightDirective,
     BetterHighlightDirective,
     UnlessDirective,
-    DropdownDirective
+    DropdownDirective,
+    ActiveUsersComponent,
+    InactiveUsersComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [AccountsService, LoggingService],
+  providers: [AccountsService, LoggingService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
