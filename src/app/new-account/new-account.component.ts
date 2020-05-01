@@ -5,8 +5,8 @@ import {AccountsService} from '../accounts.service';
 @Component({
   selector: 'app-new-account',
   templateUrl: './new-account.component.html',
-  styleUrls: ['./new-account.component.css'],
-  providers: [LoggingService]
+  styleUrls: ['./new-account.component.css']
+  // providers: [LoggingService]
 })
 export class NewAccountComponent {
 
@@ -15,7 +15,7 @@ export class NewAccountComponent {
 
   onCreateAccount(accountName: string, accountStatus: string) {
     this.accountsService.addAccount(accountName, accountStatus);
-    this.loggingService.onStatusChange(accountStatus);
+    // this.loggingService.onStatusChange(accountStatus);
   }
 
 }
