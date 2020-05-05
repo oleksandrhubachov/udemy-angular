@@ -11,24 +11,32 @@ import {AuthGuardService} from './auth-guard.service';
 import {CanDeactivateGuardService} from './servers/edit-server/can-deactivate-guard.service';
 import {ErrorPageComponent} from './error-page/error-page.component';
 import {ServerResolver} from './servers/server/server-resolver.service';
+import {RecipesComponent} from './recipes/recipes.component';
+import {ShoppingListComponent} from './shopping-list/shopping-list.component';
+
+// const appRoutes: Routes = [
+//   {path: '', component: HomeComponent},
+//   {path: 'users', component: UsersComponent, children: [
+//       {path: ':id/:name', component: UserComponent}
+//     ]},
+//   {
+//     path: 'servers',
+//     // canActivate: [AuthGuardService],
+//     canActivateChild: [AuthGuardService],
+//     component: ServersComponent,
+//     children: [
+//       {path: ':id', component: ServerComponent, resolve: {server: ServerResolver}},
+//       {path: ':id/edit', component: EditServerComponent, canDeactivate: [CanDeactivateGuardService]}
+//     ]},
+//   // {path: 'not-found', component: PageNotFoundComponent},
+//   {path: 'not-found', component: ErrorPageComponent, data: {message: 'Page not found!'}},
+//   {path: '**', redirectTo: '/not-found'}
+// ];
 
 const appRoutes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'users', component: UsersComponent, children: [
-      {path: ':id/:name', component: UserComponent}
-    ]},
-  {
-    path: 'servers',
-    // canActivate: [AuthGuardService],
-    canActivateChild: [AuthGuardService],
-    component: ServersComponent,
-    children: [
-      {path: ':id', component: ServerComponent, resolve: {server: ServerResolver}},
-      {path: ':id/edit', component: EditServerComponent, canDeactivate: [CanDeactivateGuardService]}
-    ]},
-  // {path: 'not-found', component: PageNotFoundComponent},
-  {path: 'not-found', component: ErrorPageComponent, data: {message: 'Page not found!'}},
-  {path: '**', redirectTo: '/not-found'}
+  {path: '', redirectTo: '/recipes', pathMatch: 'full'},
+  {path: 'recipes', component: RecipesComponent},
+  {path: 'shopping-list', component: ShoppingListComponent}
 ];
 
 @NgModule({
