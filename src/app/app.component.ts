@@ -13,6 +13,7 @@ export class AppComponent {
   //   console.log(form);
   // }
   defaultQuestion: string = 'pet';
+  answer: string;
 
   suggestUserName() {
     const suggestedName = 'Superuser';
