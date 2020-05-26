@@ -6,12 +6,16 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import {ShortenPipe} from './shorten.pipe';
 import { FilterPipe } from './filter.pipe';
+import { ReversePipe } from './reverse.pipe';
+import { OrderByPipe } from './order-by.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShortenPipe,
-    FilterPipe
+    FilterPipe,
+    ReversePipe,
+    OrderByPipe
   ],
   imports: [
     BrowserModule,
