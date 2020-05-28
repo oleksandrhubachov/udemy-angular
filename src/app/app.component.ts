@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   constructor(private http: HttpClient, private postsService: PostsService) {}
 
   ngOnInit() {
-    this.postsService.fetchPosts();
+    this.onFetchPosts();
   }
 
   onCreatePost(postData: Post) {
@@ -24,7 +24,11 @@ export class AppComponent implements OnInit {
   }
 
   onFetchPosts() {
-    this.postsService.fetchPosts();
+    this.isLoading = true;
+    this.postsService.fetchPosts().subscribe(posts => {
+      this.isLoading = false;
+      this.loadedPosts = posts;
+    });
   }
 
   onClearPosts() {
