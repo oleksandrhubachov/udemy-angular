@@ -51,4 +51,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.errorSubscription.unsubscribe();
   }
 
+  onHandleError() {
+    this.error = null;
+  }
 }
