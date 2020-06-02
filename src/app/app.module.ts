@@ -37,7 +37,6 @@ import { RecipeService } from './recipes/recipe.service';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    HttpModule,
     AppRoutingModule
   ],
   providers: [ShoppingListService, RecipeService],
