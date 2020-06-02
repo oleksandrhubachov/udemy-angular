@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "udemy-angular"
+    }
+  },
+  "defaultProject": "udemy-angular",
+  "cli": {
+    "analytics": "c1e1b296-877b-496f-94a8-6f364c7230b5"
+  }
 }
