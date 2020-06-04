@@ -16,4 +16,12 @@ export class DataStorageService {
       console.log(response);
     });
   }
+
+  fetchRecipes() {
+    this.http.get<Recipe[]>('https://ng-course-recipe-97253.firebaseio.com/recipes.json')
+      .subscribe(recipes => {
+        console.log(recipes);
+        this.recipeService.setRecipes(recipes);
+      });
+  }
 }
