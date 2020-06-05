@@ -9,8 +9,7 @@ import {RecipeService} from './recipe.service';
 export class RecipesResolverService implements Resolve<Recipe[]> {
 
   constructor(private dataStorageService: DataStorageService,
-              private recipeService: RecipeService) {
-  }
+              private recipeService: RecipeService) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Recipe[]> | Promise<Recipe[]> | Recipe[] {
     const recipes = this.recipeService.getRecipes();
