@@ -15,7 +15,7 @@ export class PostsService {
 
   createAndStorePost(postData: Post) {
     this.http
-      .post<{[key: string]: Post}>(
+      .post<{ [key: string]: Post }>(
         'https://ng-complete-guide-3c763.firebaseio.com/posts.json',
         postData,
         {
@@ -33,27 +33,27 @@ export class PostsService {
     let searchParams = new HttpParams();
     searchParams = searchParams.append('print', 'pretty');
     searchParams = searchParams.append('page', '0');
-    return this.http.get<{[key: string]: Post}>(
+    return this.http.get<{ [key: string]: Post }>(
       'https://ng-complete-guide-3c763.firebaseio.com/posts.json',
       {
-          headers: new HttpHeaders({'Custom-Header': 'Hello'}),
-          params: searchParams,
-          responseType: 'json'
-        }
-      )
+        headers: new HttpHeaders({'Custom-Header': 'Hello'}),
+        params: searchParams,
+        responseType: 'json'
+      }
+    )
       .pipe(map(responseData => {
-        const postsArray: Post[] = [];
-        for (const key in responseData) {
-          if (responseData.hasOwnProperty(key)) {
-            postsArray.push({...responseData[key], id: key});
+          const postsArray: Post[] = [];
+          for (const key in responseData) {
+            if (responseData.hasOwnProperty(key)) {
+              postsArray.push({...responseData[key], id: key});
+            }
           }
-        }
-        return postsArray;
-      }),
-      catchError(errorResponse => {
-        return throwError(errorResponse);
-      })
-    );
+          return postsArray;
+        }),
+        catchError(errorResponse => {
+          return throwError(errorResponse);
+        })
+      );
   }
 
   deletePosts() {
@@ -62,10 +62,10 @@ export class PostsService {
         observe: 'events',
         responseType: 'json'
       }).pipe(tap(event => {
-        console.log(event);
-        if (event.type === HttpEventType.Response) {
-          console.log(event.body);
-        }
+      console.log(event);
+      if (event.type === HttpEventType.Response) {
+        console.log(event.body);
+      }
     }));
   }
 }
